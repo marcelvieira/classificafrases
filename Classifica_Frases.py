@@ -60,14 +60,15 @@ source.writelines("\n"+str(predictions))
 
 
 while new_sentences != ['Sair']: 
-    new_sentences = [input("Digita a frase:")]      
+    new_sentences = [input("\033[;7m Digita a frase: \033[0;0m")]      
     new_sentences_UP=[(new_sentences[0].upper())]
     #print(str(new_sentences_UP) )
    # new_sentences.append(new_sentences[0].upper())
     new_sentences_vectorized = vectorizer.transform(new_sentences_UP)
     new_predictions = classifier.predict(new_sentences_vectorized)
  #  print(str(new_sentence)+" - Previsões para novas frases:", new_predictions)
-    print(str(new_sentences_UP) + ' - ' + str(new_predictions))
+    print('\033[1;36m' + str(new_sentences_UP) + ' - '+'\033[1;31m' + str(new_predictions))
+    print('\033[0;0m')
     source.writelines("\n"+str(new_sentences_UP)+': '+str(new_predictions)+".")
 source.close
 
