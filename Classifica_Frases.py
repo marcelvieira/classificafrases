@@ -58,6 +58,13 @@ source = open('C:/teste_Py/texto.txt', 'w+')
 source.writelines("\n"+str(accuracy))
 source.writelines("\n"+str(predictions))
 
+RED   = "\033[1;31m"  
+BLUE  = "\033[1;34m"
+CYAN  = "\033[1;36m"
+GREEN = "\033[0;32m"
+RESET = "\033[0;0m"
+BOLD    = "\033[;1m"
+REVERSE = "\033[;7m"
 
 while new_sentences != ['Sair']: 
     new_sentences = [input("\033[;7m Digita a frase: \033[0;0m")]      
